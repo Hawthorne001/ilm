@@ -5,6 +5,8 @@ pragma solidity 0.8.21;
 import { IERC20 } from "@openzeppelin/contracts/interfaces/IERC20.sol";
 import { IRouter } from "../../src/vendor/aerodrome/IRouter.sol";
 import { IAerodromeAdapter } from "../../src/interfaces/IAerodromeAdapter.sol";
+import { IUniversalAerodromeAdapter } from
+    "../../src/interfaces/IUniversalAerodromeAdapter.sol";
 import { IWrappedERC20PermissionedDeposit } from
     "../../src/interfaces/IWrappedERC20PermissionedDeposit.sol";
 import { ISwapper } from "../../src/interfaces/ISwapper.sol";
@@ -45,6 +47,32 @@ library DeployHelperLib {
 
         aerodromeAdapter.setRoutes(tokenA, tokenB, routesAtoB);
         aerodromeAdapter.setRoutes(tokenB, tokenA, routesBtoA);
+    }
+
+    /// @dev sets a direct path on UniversalAerodromeAdapter between tokenA <-> tokenB pair
+    /// @dev requires for the caller to be the owner of UniversalAerodromeAdapter
+    /// @param adapter address of the UniversalAerodromeAdapter
+    /// @param tokenA tokenA
+    /// @param tokenB tokenB
+    /// @param tickSpacing tickSpacing of the path between tokens
+    function _constructAndSetPaths(
+        IUniversalAerodromeAdapter adapter,
+        address tokenA,
+        address tokenB,
+        int24 tickSpacing
+    ) internal {
+        address[] memory aToB = new address[](2);
+        address[] memory bToA = new address[](2);
+        int24[] memory tickSpacings = new int24[](1);
+
+        aToB[0] = tokenA;
+        aToB[1] = tokenB;
+        bToA[0] = tokenB;
+        bToA[1] = tokenA;
+        tickSpacings[0] = tickSpacing;
+
+        adapter.setPath(aToB, tickSpacings);
+        adapter.setPath(bToA, tickSpacings);
     }
 
     /// @dev set up the routes for swapping (wrappedTokenA <-> tokenB)
