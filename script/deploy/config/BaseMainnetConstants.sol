@@ -17,6 +17,8 @@ abstract contract BaseMainnetConstants {
         0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913;
     address public constant BASE_MAINNET_cbBTC =
         0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf;
+    address public constant BASE_MAINNET_weETH =
+        0x04C0599Ae5A44757c0af6F9eC3b93da8976c150A;
 
     address public constant SEAMLESS_ADDRESS_PROVIDER_BASE_MAINNET =
         0x0E02EB705be325407707662C6f6d3466E939f3a0;
