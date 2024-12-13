@@ -15,6 +15,10 @@ abstract contract BaseMainnetConstants {
         0x2Ae3F1Ec7F1F5012CFEab0185bfc7aa3cf0DEc22;
     address public constant BASE_MAINNET_USDC =
         0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913;
+    address public constant BASE_MAINNET_cbBTC =
+        0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf;
+    address public constant BASE_MAINNET_weETH =
+        0x04C0599Ae5A44757c0af6F9eC3b93da8976c150A;
 
     address public constant SEAMLESS_ADDRESS_PROVIDER_BASE_MAINNET =
         0x0E02EB705be325407707662C6f6d3466E939f3a0;
@@ -47,14 +51,27 @@ abstract contract BaseMainnetConstants {
     address public constant SEAMLESS_COMMUNITY_MULTISIG =
         0xA1b5f2cc9B407177CD8a4ACF1699fa0b99955A22;
 
+    address public constant ILM_REGISTRY =
+        0x36291d2D51a0122B9faCbE3c3F989cc6b1f859B3;
     address public constant SWAPPER = 0xE314ae9D279919a00d4773cCe37946A98fADDaBc;
     address public constant WRAPPED_TOKEN_ADAPTER =
-        0xc3e17CDac7C6ED317f0D9845d47df1a281B5f79E;
+        0x1508F1B71210593406f8b614dcc41cdF3e6d2a6d;
     address public constant AERODROME_ADAPTER =
         0x6Cfc78c96f87e522EBfDF86995609414cFB1DcB2;
+    address public constant UNIVERSAL_AERODROME_ADAPTER =
+        0x87f8D14A8796b22116d267CFE9A57e986F207468;
+
+    address public constant WSTETH_USD_ORACLE =
+        0xD815218fA8c9bd605c2b048f26cd374A752cAA76;
+    address public constant WETH_USD_ORACLE =
+        0x71041dddad3595F9CEd3DcCFBe3D1F4b0a16Bb70;
 
     address public constant BASE_MAINNET_SEAMLESS_WRAPPED_WSTETH =
         0xc9ae3B5673341859D3aC55941D27C8Be4698C9e4;
     address public constant BASE_MAINNET_SEAMLESS_WRAPPED_WETH =
         0x3e8707557D4aD25d6042f590bCF8A06071Da2c5F;
+    address public constant BASE_MAINNET_SEAMLESS_WRAPPED_USDC =
+        0x9660Af3B1955648A72F5C958E80449032d645755;
+    address public constant BASE_MAINNET_SEAMLESS_WRAPPED_cbBTC =
+        0x44B74eFDDd5f6a2D13A529cb45D861c58D805beB;
 }
